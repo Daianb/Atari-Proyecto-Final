@@ -1,8 +1,6 @@
 # Atari-Proyecto-Final
 # Daian Alejandra Bermúdez Ceballos
 
-Desarollo
-
 Saqué de la pagina https://keras.io/examples/rl/deep_q_network_breakout/ el codigo proximo a explicarse:
 
 ## Setup: 
@@ -73,13 +71,17 @@ def create_q_model():
 ```
 En esta función, se define la arquitectura del modelo de red neuronal para hacer predicciones de los valores Q. El modelo utiliza la arquitectura descrita en el artículo de DeepMind.
 
- - inputs se crea utilizando la clase Input de Keras y tiene una forma de (84, 84, 4). Esto indica que la entrada del modelo es una imagen de 84x84 píxeles con 4 canales, que corresponden a los 4 marcos apilados del juego.
- - Luego, se aplican tres capas de convolución (Conv2D) con diferentes tamaños de filtro, pasos de desplazamiento y funciones de activación. Cada capa convolucional extrae características de los marcos de la pantalla del juego.
- - Después de las capas de convolución, se utiliza una capa de aplanamiento (Flatten) para convertir la salida en un vector unidimensional.
- - A continuación, se aplica una capa densa (Dense) con 512 unidades y función de activación ReLU para procesar las características extraídas.
- - Finalmente, se utiliza una capa densa de salida (Dense) con num_actions unidades y función de activación lineal para obtener las predicciones de los valores Q para cada acción posible.
+  -- inputs se crea utilizando la clase Input de Keras y tiene una forma de (84, 84, 4). Esto indica que la entrada del modelo es una imagen de 84x84 píxeles con 4 canales, que corresponden a los 4 marcos apilados del juego.
+  
+  -- Luego, se aplican tres capas de convolución (Conv2D) con diferentes tamaños de filtro, pasos de desplazamiento y funciones de activación. Cada capa convolucional extrae características de los marcos de la pantalla del juego.
+  
+  -- Después de las capas de convolución, se utiliza una capa de aplanamiento (Flatten) para convertir la salida en un vector unidimensional.
+  
+  -- A continuación, se aplica una capa densa (Dense) con 512 unidades y función de activación ReLU para procesar las características extraídas.
+  
+  -- Finalmente, se utiliza una capa densa de salida (Dense) con num_actions unidades y función de activación lineal para obtener las predicciones de los valores Q para cada acción posible.
  
--- Creación del modelo y modelo objetivo:
+- Creación del modelo y modelo objetivo:
 ```
 model = create_q_model()
 model_target = create_q_model()
